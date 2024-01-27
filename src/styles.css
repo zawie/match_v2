@@ -23,7 +23,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-form {
+section {
     display: flex;
     flex-direction: column;
 }
