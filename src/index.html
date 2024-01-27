@@ -3,15 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSV Processing</title>
+  <title>Match</title>
+  <link rel="stylesheet" href="styles.css">
   <script src="csvWriter.js"></script>
   <script src="assignerLogic.js"></script>
   <script src="externshipParser.js"></script>
   <script src="csvio.js"></script>
   </head>
 <body>
+  <div class="container">
+    <h1>RiceApps Matching Algorithm</h1>
+    
+    <div class="instructions">
+      <p>
+        <b> Instructions </b>
+      </p>
+      <li>Upload your spreadsheet to this site in the submission section below.
+          <ul>
+            <li>Make sure your student rankings tab is called “Rankings” and exactly that—otherwise, the site will not recognize that as the column with the student data. </li>
+          </ul>
+      </li>
+      <li>Click the “Match” button and then click The following 4 output files will be downloaded. <b> Please use Chrome or Firefox. Safari doesn't seem to display all downloaded files.</b>
+        <ol>
+          <li><b>Unmatched externship hosts</b></li>
+          <li><b>Results</b> containing matched students and externships along with student’s email, ranking, class, and major</li>
+          <li><b>Unmatched</b> students along with the their email, ranking, class, and major</li>
+          <li><b>Basic statistic</b> file containing data on the number of matched students, number of unmatched students, percentage of matched students, average rank of matched students,
+              average rank of unmatched students, number of matched externships, number of unmatched externships, and the percentage of matched hosts.
+          </li>
+        </ol>
+      </li>
+    </ol>
 
-  <input type="file" id="csvInput" accept=".csv">
-  <button onclick="processCSV()">Process CSV</button>
+    <p>
+      <b>How We Make Matches:</b>
+    </p>
+    <ul>
+      <li>Calculate each externships’ Priority. Priority = # slots available - # applicants.</li>
+      <li>Sort Externships by Priority. Least competitive externships are first, most competitive ones later. Externships are arbitrarily listed within others with the same priority.</li>
+      <li> Start from the first externship in the sorted externship list. Match students starting from rank 1 within the externship </li>
+      <li>Continue down the list of sorted externships and assign students.</li>
+    </ul>
+
+    <p>
+      Overall, we will be going through each externship in the prioritized list and assigning students based on their rank. This will make it more likely for students who applied to multiple externships to get one.
+    </p>
+    </div>
+
+    <form action="#" method="post" enctype="multipart/form-data" id="csvForm">
+        <label for="csvFile">Choose a CSV file:</label>
+        <input type="file" name="csvFile" id="csvInput" accept=".csv" required>
+        
+        <button type="processCSV()">Match</button>
+    </form>
+</div>
 </body>
 </html>
