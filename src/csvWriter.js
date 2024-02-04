@@ -7,7 +7,7 @@ function exportCSV(assignments) {
         //                  externship2, student3
         //                  unmatched, student4
 
-    const rows = [["Externship", "Job Id", "First Name", "Last Name", "Email", "Ranking", "Class", "Major",]];
+    const rows = [["Externship", "Job Id", "First Name", "Last Name", "Email", "Ranking", "Class", "Major"]];
 
     //create [externshipName, studentName] rows 
     var i;
@@ -53,7 +53,7 @@ function exportExternshipsCSV(unmatchedExternships) {
 
 function exportUnmatchedStudentsCSV(unmatchedStudents) {    
 
-    const rows = [["First Name", "Last Name", "Externship", "Job Id", "Email", "Ranking", "Class", "Major",]];
+    const rows = [["First Name", "Last Name", "Externship", "Job Id", "Email", "Ranking", "Class", "Major"]];
 
     //add [unmatched, studentName] rows
     var u;
@@ -92,6 +92,5 @@ function exportStatsCSV(stats) {
     rows.push(["Number of unmatched externships", stats[6].toString()]);
     rows.push(["Percentage of matched hosts", stats[7].toString()]);
     
-    console.log(rows);
     return rows;
 }

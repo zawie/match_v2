@@ -353,7 +353,7 @@ function getColumnNames(){
 }
 
 function rowsToRawCSV(data) {
-    return data.map(row => row.join(',')).join('\n')
+    return data.map(row => row.map(cell => cell.toString().includes(',') ? `"${cell}"` : cell).join(',')).join('\n')
 }
 
 function handler(rowData) {
