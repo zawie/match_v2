@@ -89,6 +89,9 @@ function processCSV() {
     // Get the input element
     var input = document.getElementById('csvInput');
 
+    document.getElementById("matchButton").disabled = true;
+    document.getElementById("matchButton").innerHTML = "Match Complete! Check Downloads.";
+
     // Check if a file is selected
     if (input.files.length > 0) {
     var file = input.files[0];

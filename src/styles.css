@@ -52,6 +52,12 @@ button:hover {
     background-color: #45a049;
 }
 
+button:disabled {
+    background-color: #ccc; /* Gray background */
+    color: #666; /* Dark gray text color */
+    cursor: not-allowed; /* Change cursor to not-allowed */
+  }
+  
 /* Apply basic styling to the entire table */
 table {
     border-collapse: collapse;
